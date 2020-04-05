@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_favourite"
+        android:icon="@drawable/icon_favourite_white"
+        android:title="@string/favourite"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_unfavourite"
+        android:icon="@drawable/icon_unfavourite"
+        android:title="@string/unfavourite"
+        app:showAsAction="ifRoom" />
+
+</menu>

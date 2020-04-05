@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">iOSDevUK</string>
+    <string name="app_name_full">iOSDevUK Schedule</string>
+
+    <string name="sessions">Sessions</string>
+    <string name="session">Session</string>
+    <string name="iosdevuk_sessions">iOSDevUK Sessions</string>
+    <string name="favourite">Favourite</string>
+    <string name="unfavourite">Unfavourite</string>
+    <string name="favourites">Favourites</string>
+    <string name="location">Location</string>
+    <string name="locations">Locations</string>
+    <string name="speaker">Speaker</string>
+    <string name="speakers">Speakers</string>
+
+
+    <string name="search">Search</string>
+    <string name="settings">Settings</string>
+    <string name="about">About</string>
+
+    <string name="title_item_list">Items</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="filter">Filter</string>
+    <string name="talks">Talks</string>
+    <string name="workshops">Workshops</string>
+    <string name="coffee_breaks">Coffee Breaks</string>
+    <string name="registration">Registration</string>
+    <string name="lunches">Lunches</string>
+    <string name="dinners">Dinners</string>
+    <string name="everything">Everything</string>
+
+    <string name="add_fav">Added to favourites</string>
+    <string name="remove_fav">Removed from favourites</string>
+
+    <string name="emoji_coffee">☕</string>
+    <string name="emoji_food">🍽</string>
+    <string name="emoji_registration">📝</string>
+    <string name="emoji_talk">🗣</string>
+    <string name="emoji_workshop">🛠</string>
+
+
+    <string name="google_maps_key">AIzaSyAq78DK5ClYhwLlXjjD4yc0sq6OMfNj0VY</string>
+
+    <string name="fav_icon_desc">Favourite Icon</string>
+    <string name="swipe_instruction">Swipe left to favourite a session</string>
+    <string name="search_hint">Search by session title</string>
+
+    <string name="foss_attrib">
+        This application makes use of the following libraries:\n
+        - <a href="https://developer.android.com/jetpack/androidx/">AndroidX</a> by The Android Open Source Project\n
+        - <a href="https://developer.android.com/topic/libraries/architecture/">Android Architecture Components</a> by The Android Open Source Project\n
+        - <a href="https://developer.android.com/training/testing/espresso/">Espresso</a> by The Android Open Source Project\n
+        - <a href="https://github.com/Kotlin/anko">Anko</a> by Kotlin\n
+        - <a href="https://github.com/square/picasso">Picasso</a> by Square, Inc.\n
+        - <a href="https://github.com/daimajia/AndroidSwipeLayout">AndroidSwipeLayout</a> by daimajia\n
+        - <a href="https://github.com/hdodenhof/CircleImageView">CircleImageView</a> by Henning Dodenhof\n
+    </string>
+    <string name="my_name">Jack Webb</string>
+
+    <string name="more_about">"More about %1$s"</string>
+    <string name="iosdevuk_app_icon">iOSDevUK App Icon</string>
+</resources>

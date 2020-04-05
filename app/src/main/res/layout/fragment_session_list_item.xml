@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="session"
+            type="me.jackwebb.android.conferenceappkotlin.model.session.Session" />
+        <variable
+            name="sessionHasSpeaker"
+            type="Boolean" />
+    </data>
+
+    <com.daimajia.swipe.SwipeLayout
+        android:id="@+id/sessionListSwipeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Bottom view (Favourite icon) -->
+        <LinearLayout
+            android:id="@+id/favourite"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@color/favourite"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/favouriteIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_favourite"
+                tools:srcCompat="@drawable/icon_favourite"
+                android:contentDescription="@string/fav_icon_desc" />
+
+        </LinearLayout>
+
+        <!-- Top view (Event title, time etc.) -->
+        <LinearLayout
+            android:id="@+id/session"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_bottom"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="horizontal">
+
+            <!-- Margin bottom allows the border to be seen all the way along the item -->
+            <LinearLayout
+                android:id="@+id/indicator"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1dp"
+                android:background="@color/session_standard"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/session_standard_secondary_text"
+                    tools:text="Tue" />
+
+                <TextView
+                    android:id="@+id/txtStartTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/session_standard_primary_text"
+                    android:textStyle="bold"
+                    tools:text="09:30" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/details"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/txtSessionTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{session.title}"
+                    android:paddingEnd="8dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/light_bg_dark_primary_text"
+                    tools:text="Indie iOS Development: Things I've learnt after 5 million downloads"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/sessionDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtSpeaker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{session.speakerId}"
+                        app:goneUnless="@{sessionHasSpeaker}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textColor="@color/light_bg_dark_secondary_text"
+                        app:layout_constraintBottom_toTopOf="@id/txtLocation"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Sam Davies" />
+
+                    <TextView
+                        android:id="@+id/txtLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{session.locationId}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textColor="@color/light_bg_dark_secondary_text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txtSpeaker"
+                        tools:text="Physics Main" />
+
+                    <TextView
+                        android:id="@+id/txtSessionTypeEmoji"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="🛠" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.daimajia.swipe.SwipeLayout>
+
+</layout>

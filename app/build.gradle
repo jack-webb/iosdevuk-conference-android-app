@@ -1,0 +1,121 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+// Kotlin safeargs from navigation parameters
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "me.jackwebb.android.conferenceappkotlin"
+        minSdkVersion 26
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["location.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+ext.anko_version = '0.10.8'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.navigation:navigation-fragment:2.1.0'
+    implementation 'androidx.navigation:navigation-ui:2.1.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    testImplementation 'junit:junit:4.12'
+
+    implementation 'com.google.android.material:material:1.0.0'
+
+    // Anko Commons
+    implementation "org.jetbrains.anko:anko-commons:$anko_version"
+
+    // AppCompat 7
+    implementation 'com.android.support:appcompat-v7:29.0.0'
+
+    def nav_version = "2.1.0"
+    // Kotlin
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    def room_version = "2.2.2"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    // For Kotlin use kapt instead of annotationProcessor
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$room_version"
+    // optional - RxJava support for Room
+    implementation "androidx.room:room-rxjava2:$room_version"
+    // optional - Guava support for Room, including Optional and ListenableFuture
+    implementation "androidx.room:room-guava:$room_version"
+    // Test helpers
+    testImplementation "androidx.room:room-testing:$room_version"
+
+    // Picasso - image handling lib - likely unused if dling images
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
+    // Stuff for swiping
+    implementation 'com.android.support:recyclerview-v7:29.0.0'
+    implementation "com.daimajia.swipelayout:library:1.2.0@aar"
+
+    // Rounded image view
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+
+    // Kotlin specific:
+    // Extensions = ViewModel + LiveData
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    kapt "android.arch.lifecycle:compiler:1.1.1"
+    // Room
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    kapt "android.arch.persistence.room:compiler:1.1.1"
+
+    // Card View
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    // Preferences
+    implementation 'androidx.preference:preference:1.1.0'
+
+    // Espresso testing
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestCompile 'com.android.support.test.espresso:espresso-contrib:3.0.2'
+
+}

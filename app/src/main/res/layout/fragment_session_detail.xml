@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="session"
+            type="me.jackwebb.android.conferenceappkotlin.model.session.Session" />
+
+        <variable
+            name="sessionHasSpeaker"
+            type="Boolean" />
+
+        <variable
+            name="sessionTypeString"
+            type="String" />
+    </data>
+
+        <LinearLayout
+            android:id="@+id/session_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/txtSessionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{session.title}"
+                android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                android:textSize="32sp"
+                tools:text="Welcome/Introduction" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtSpeaker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{session.speakerId}"
+                    android:textAppearance="@android:style/TextAppearance.Material.Subhead"
+                    app:goneUnless="@{!session.speakerId.isEmpty()}"
+                    tools:text="Neil Taylor" />
+
+                <TextView
+                    android:id="@+id/bullet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" • "
+                    android:textAppearance="@android:style/TextAppearance.Material.Subhead"
+                    app:goneUnless="@{!session.speakerId.isEmpty()}"
+                    tools:text=" • "
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/txtSessionType"
+                    sessionTypeText="@{session.sessionType}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="@android:style/TextAppearance.Material.Subhead"
+                    tools:text="Talk" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{session.locationId}"
+                android:textAppearance="@android:style/TextAppearance.Material.Subhead"
+                tools:text="Llandinam B23" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <TextView
+                android:id="@+id/txtDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{session.content}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                tools:text="A welcome to iOSDevUK 2017 and some information about the conference and the conference meal later today." />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <Button
+                android:id="@+id/btnSpeaker"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Information about Neil Taylor" />
+
+            <Button
+                android:id="@+id/btnLocation"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Information about Llandinam B23" />
+
+        </LinearLayout>
+</layout>

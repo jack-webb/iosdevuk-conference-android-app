@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="speaker"
+            type="me.jackwebb.android.conferenceappkotlin.model.speaker.Speaker" />
+    </data>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/session_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:gravity="start|center_vertical"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/avatar"
+                setAvatar="@{speaker.id}"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                tools:srcCompat="@tools:sample/avatars[2]" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="@{speaker.name}"
+                    android:textAppearance="@android:style/TextAppearance.Material.Title" />
+
+                <TextView
+                    android:id="@+id/txtTwitter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text='@{"@" + speaker.twitterName}'
+                    android:textAppearance="@android:style/TextAppearance.Material.Subhead"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <TextView
+            android:id="@+id/txtDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{speaker.bio}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <Button
+            android:id="@+id/btnTwitter"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{"@" + speaker.twitterName + " on twitter"}'
+            tools:text="FOLLOW ON TWITTER" />
+
+    </LinearLayout>
+</layout>

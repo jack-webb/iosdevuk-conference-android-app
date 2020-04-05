@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_filter"
+        android:icon="@drawable/icon_filter"
+        android:title="@string/filter"
+        app:showAsAction="ifRoom|collapseActionView">
+        <menu>
+            <item
+                android:id="@+id/action_maptype_none"
+                android:title="@string/everything"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_maptype_normal"
+                android:title="@string/talks"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_maptype_satellite"
+                android:title="@string/workshops"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_maptype_hybrid"
+                android:title="@string/workshops"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+
+</menu>

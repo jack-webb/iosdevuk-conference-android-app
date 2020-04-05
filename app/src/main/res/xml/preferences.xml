@@ -1,0 +1,9 @@
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <SwitchPreferenceCompat
+        app:key="notifications"
+        app:title="Favourite session alerts"
+        app:summary="Get notifications of favourite sessions 10 minutes before they begin"/>
+
+</PreferenceScreen>
