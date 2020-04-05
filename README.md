@@ -12,7 +12,7 @@ This repo has been uploaded as-is, from when I submitted the project. I haven't 
 
 ### Screenshots
 
-[!]("screenshots.png")
+![](screenshots.png)
 
 
 ---
