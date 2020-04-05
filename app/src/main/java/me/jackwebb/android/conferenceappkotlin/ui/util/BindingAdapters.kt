@@ -6,6 +6,7 @@ import androidx.databinding.BindingAdapter
 import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
 import me.jackwebb.android.conferenceappkotlin.model.session.SessionType
+import java.util.*
 
 object BindingAdapters {
     /**
@@ -20,7 +21,7 @@ object BindingAdapters {
     @BindingAdapter("sessionTypeText")
     @JvmStatic
     fun TextView.sessionTypeText(sessionType: SessionType) {
-        text = sessionType.toString().toLowerCase().capitalize()
+        text = sessionType.toString().toLowerCase(Locale.ROOT).capitalize(Locale.ROOT)
     }
 
     @BindingAdapter("setAvatar")
